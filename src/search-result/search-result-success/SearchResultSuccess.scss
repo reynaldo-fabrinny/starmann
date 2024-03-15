@@ -1,0 +1,44 @@
+.success-launch-box {
+    height: 200px;
+   
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: auto; 
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+    }
+
+    .footer {
+        display: flex;
+        margin-top: auto;
+
+        .time {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .label {
+                align-self: flex-start;
+
+            }
+    
+            .elapsed-time {
+                color: #888;
+                align-self: flex-start;
+            }
+        }
+
+        .id {
+            color: #888;
+            align-self: flex-end;    
+            margin-left: auto;
+        }
+    }
+}
