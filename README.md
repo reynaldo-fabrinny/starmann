@@ -9,3 +9,5 @@ Using:
 - Axios
 - Material UI
   
+to run the project call: 
+npm run dev
