@@ -1,4 +1,11 @@
 # starmann
 Project using React and spaceX-API
 
-# React + TypeScript + Vite
+
+Using: 
+- React
+- TypeScript
+- Vite
+- Axios
+- Material UI
+  
