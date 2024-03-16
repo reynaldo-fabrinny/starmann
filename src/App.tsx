@@ -19,7 +19,7 @@ function App() {
       setLaunchResultError,
     };
 
-  const { data, loadingPastLaunches } = useLoadPastLaunches({ quantity: 4 });
+  const { data, loadingPastLaunches } = useLoadPastLaunches({ quantity: 3 });
   const launches: LaunchModel[] = data ? data.docs : [];
 
   return (

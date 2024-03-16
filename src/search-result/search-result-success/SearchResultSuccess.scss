@@ -4,7 +4,6 @@
     .header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         margin-bottom: auto; 
 
         .name {
@@ -21,12 +20,9 @@
         .time {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
 
             .label {
                 align-self: flex-start;
-
             }
     
             .elapsed-time {

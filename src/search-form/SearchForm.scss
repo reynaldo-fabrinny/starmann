@@ -1,15 +1,10 @@
 .search-form {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap; 
 
-    Input {
-        flex-grow: 1;
-    }
-    
     Button {
-         margin-left: 10px;
+        margin-left: 10px;
     }
 
     @media (max-width: 600px) {
@@ -18,6 +13,10 @@
         .input {
             margin-right: 0; 
             margin-bottom: 10px;
+        }
+        
+        Button {
+            margin-left: 0;
         }
     }
 }
