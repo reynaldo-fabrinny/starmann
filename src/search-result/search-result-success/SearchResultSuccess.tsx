@@ -4,7 +4,6 @@ import Chip from "@mui/material/Chip";
 import "./SearchResultSuccess.scss";
 import { LaunchModel } from "../../models/LaunchModel";
 
-
 function SearchResultSuccess({ launch }: Readonly<{ launch: LaunchModel }>) {
   const [elapsedTime, setElapsedTime] = useState<number>(0);
 
@@ -16,14 +15,13 @@ function SearchResultSuccess({ launch }: Readonly<{ launch: LaunchModel }>) {
     setElapsedTime(elapsed);
   }, 1000);
 
-
-  function formatElapsedTime (seconds: number): string {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
+  function formatElapsedTime (completeTime: number): string {
+    const hours = Math.floor(completeTime / 3600);
+    const minutes = Math.floor((completeTime % 3600) / 60);
+    const seconds = completeTime % 60;
 
     return `${hours.toString().padStart(2, '0')}:${minutes
-      .toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+      .toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
 
   return (
