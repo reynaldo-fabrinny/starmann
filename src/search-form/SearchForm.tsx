@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
 import "./SearchForm.scss"; 
 
-const FETCH_LAUNCH_URL = "https://api.spacexdata.com/v4/launches/";
+const FETCH_LAUNCH_URL = "https://api.spacexdata.com/v5/launches/";
 
 function SearchForm({AppState}) {
   const { setLaunchResult, setLaunchResultError } = AppState;
@@ -12,7 +12,7 @@ function SearchForm({AppState}) {
 
   const search = async (event) => {
     event.preventDefault();
-    
+
     try {
       axios
         .get(`${FETCH_LAUNCH_URL}${inputValue}`)
@@ -27,7 +27,7 @@ function SearchForm({AppState}) {
 
       setInputValue("");
     } catch (error) {
-      console.error("Error trying to find a launch:", error);
+      console.error("Error trying to find a launch: ", error);
     }
   };
 
@@ -39,7 +39,6 @@ function SearchForm({AppState}) {
     <form className="search-form" onSubmit={search}>
       <Input
         required
-        name="query"
         className="input"
         value={inputValue}
         onChange={handleChange}

@@ -6,26 +6,28 @@ import PastLaunchesGrid from './past-launches-grid/PastLaunchesGrid';
 import { LaunchModel } from './models/LaunchModel';
 import SearchBox from './search-form/SearchForm';
 import SearchResult from './search-result/SearchResult';
-import useLaunchesService from './hooks/useLoadPastLaunches';
+import useLoadPastLaunches from './hooks/useLoadPastLaunches';
 
 function App() {
     const [launchResult, setLaunchResult] = useState({});
     const [launchResultError, setLaunchResultError] = useState({});
     
-    const AppState  = {
-      launchResult, setLaunchResult,
-      launchResultError, setLaunchResultError
-    }
+    const AppState = {
+      launchResult,
+      setLaunchResult,
+      launchResultError,
+      setLaunchResultError,
+    };
 
-  const { data, loading } = useLaunchesService({ quantity: 3 });
+  const { data, loadingPastLaunches } = useLoadPastLaunches({ quantity: 4 });
   const launches: LaunchModel[] = data ? data.docs : [];
 
   return (
     <Container fixed>
       <SearchBox AppState={AppState} />
       <SearchResult AppState={AppState} />
-      {loading ? (
-        <CircularProgress />
+      {loadingPastLaunches ? (
+        <CircularProgress className='loading-spinner'/>
       ) : (
         <PastLaunchesGrid launches={launches} />
       )}

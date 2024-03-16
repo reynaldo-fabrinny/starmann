@@ -18,12 +18,7 @@ function SearchResult({AppState}) {
     return (
       <div className="search-result-grid">
         <h3>Search result</h3>
-        <Grid
-          container
-          columns={{ xs: 1, md: 1 }}
-          spacing={2}
-          justifyContent="center"
-        >
+        <Grid container spacing={1} justifyContent="center">
           <Grid item xs={12}>
             {messageComponent}
           </Grid>

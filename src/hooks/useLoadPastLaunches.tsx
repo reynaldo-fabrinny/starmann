@@ -5,27 +5,27 @@ const LAUNCHES_URL = "https://api.spacexdata.com/v5/launches/query";
 
 const useLoadPastLaunches = ({quantity}: { quantity: number }) => {
   const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loadingPastLaunches, setLoadingPastLaunches] = useState(true);
 
-  const body = {options: {limit: quantity} };
+  const body = { options: { limit: quantity, sort: { date_utc: -1 } } };
 
   useEffect(() => {
-    const fetchLaunches = async () => {
+    const fetchPastLaunches = async () => {
       try {
         const { data: response } = await axios.post(LAUNCHES_URL, body);
         setData(response);
       } catch (error) {
-        console.error(error);
+        console.error("Error trying to fetch past launches: ", error);
       }
-      setLoading(false);
+      setLoadingPastLaunches(false);
     };
 
-    fetchLaunches();
+    fetchPastLaunches();
   }, []);
 
   return {
     data,
-    loading,
+    loadingPastLaunches,
   };
 };
 

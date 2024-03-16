@@ -6,19 +6,14 @@ import LaunchBox from "./launch-box/LaunchBox";
 function PastLaunchesGrid({launches}: Readonly<{launches: LaunchModel[]}>) {
 
   const launchesComponent = launches.map((launchModel: LaunchModel) => (
-    <Grid key={launchModel.id} item md={1}>
+    <Grid key={launchModel.id} item xs={12} md={4} >
       <LaunchBox launch={launchModel} />
     </Grid>
   ));
   return (
     <div className="past-launches-grid">
       <h3>Past launches</h3>
-      <Grid
-        container
-        columns={{ xs: 1, md: 3 }}
-        spacing={2}
-        justifyContent="center"
-      >
+      <Grid container spacing={1} justifyContent="left">
         {launchesComponent}
       </Grid>
     </div>
